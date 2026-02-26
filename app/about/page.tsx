@@ -137,8 +137,10 @@ export default function About() {
 
 const officers = [
   { name: "Leo Klemm",     role: "President",      major: "Agricultural Economics",          photo: "/people/leo-klemm.png" },
-  { name: "Jack Budinger", role: "Vice President",  major: "Quantitative Business Economics", photo: "/people/jack-budinger.png" },
-  { name: "John Swift",    role: "CTO",             major: "Computer Science",                photo: "/people/john-swift.jpg" },
+  { name: "Jack Budinger", role: "Vice President", major: "Quantitative Business Economics", photo: "/people/jack-budinger.png" },
+  { name: "John Swift",    role: "CTO",            major: "Computer Science",                photo: "/people/john-swift.jpg" },
+  { name: "Caleb Kuntz",   role: "Secretary",      major: "Biochemistry",                    photo: "/people/caleb-kuntz.png" },
+  { name: "Jack Fetters", role: "Treasurer", major: "Biological Engineering", photo: "/people/jack-fetters.png"}
 ];
 
 const members = [
