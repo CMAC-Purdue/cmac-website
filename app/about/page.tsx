@@ -96,17 +96,12 @@ export default function About() {
   );
 }
 
-// Replace with real officer data
 const officers = [
-  { name: "Name", role: "President", major: "Financial Planning, Analysis & Control" },
-  { name: "Name", role: "Vice President", major: "Economics" },
-  { name: "Name", role: "Treasurer", major: "Agricultural Economics" },
-  { name: "Name", role: "Secretary", major: "Finance" },
-  { name: "Name", role: "Research Director", major: "Data Science" },
-  { name: "Name", role: "Events Director", major: "Management" },
+  { name: "Leo Klemm", role: "President", major: "Agricultural Economics" },
+  { name: "Jack Budinger", role: "Vice President", major: "Quantitative Business Economics" },
+  { name: "John Swift", role: "CTO", major: "Computer Science" },
 ];
 
-// Replace with real member data
 const members = [
   { name: "Member Name", major: "Finance" },
   { name: "Member Name", major: "Econ" },
