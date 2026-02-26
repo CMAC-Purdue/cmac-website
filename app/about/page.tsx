@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Contact from "../components/Contact";
 import { useState } from "react";
 
 function Avatar({
@@ -114,23 +115,7 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Join */}
-      <section className="bg-[#F5F0E8] py-16 px-6 text-center">
-        <div className="max-w-xl mx-auto flex flex-col gap-4 items-center">
-          <h2 className="text-2xl font-bold">Want to Join?</h2>
-          <p className="text-gray-600">
-            CMAC welcomes all Purdue students. Reach out and we&apos;ll get you
-            connected with our next meeting.
-          </p>
-          <a
-            href="mailto:cmac@purdue.edu"
-            className="px-6 py-2.5 rounded-full bg-[#C8922A] text-white font-medium hover:bg-[#b07820] transition-colors"
-          >
-            Contact Us
-          </a>
-        </div>
-      </section>
+ 
     </main>
   );
 }
