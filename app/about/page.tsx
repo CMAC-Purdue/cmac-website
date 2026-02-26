@@ -84,7 +84,16 @@ export default function About() {
                 className="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col items-center text-center gap-2"
               >
                 <Avatar name={o.name} photo={o.photo} size="lg" />
-                <p className="font-semibold text-black mt-1">{o.name}</p>
+                <div className="flex items-center gap-1.5 mt-1">
+                  <p className="font-semibold text-black">{o.name}</p>
+                  {o.linkedin && (
+                    <a href={o.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#C8922A] hover:text-[#b07820] transition-colors flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
                 <p className="text-[#C8922A] text-sm font-medium">{o.role}</p>
                 {o.major && (
                   <p className="text-gray-500 text-sm">{o.major}</p>
@@ -106,7 +115,16 @@ export default function About() {
                 className="rounded-xl p-4 border border-gray-200 flex flex-col items-center text-center gap-2"
               >
                 <Avatar name={m.name} photo={m.photo} size="md" />
-                <p className="font-medium text-black text-sm">{m.name}</p>
+                <div className="flex items-center gap-1">
+                  <p className="font-medium text-black text-sm">{m.name}</p>
+                  {m.linkedin && (
+                    <a href={m.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#C8922A] hover:text-[#b07820] transition-colors flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
                 {m.major && (
                   <p className="text-gray-500 text-xs">{m.major}</p>
                 )}
@@ -121,20 +139,20 @@ export default function About() {
 }
 
 const officers = [
-  { name: "Leo Klemm",     role: "President",      major: "Agricultural Economics",          photo: "/people/leo-klemm.png" },
-  { name: "Jack Budinger", role: "Vice President", major: "Quantitative Business Economics", photo: "/people/jack-budinger.png" },
-  { name: "John Swift",    role: "CTO",            major: "Computer Science",                photo: "/people/john-swift.jpg" },
-  { name: "Caleb Kuntz",   role: "Secretary",      major: "Biochemistry",                    photo: "/people/caleb-kuntz.png" },
-  { name: "Jack Fetters", role: "Treasurer", major: "Biological Engineering", photo: "/people/jack-fetters.png"}
+  { name: "Leo Klemm",     role: "President",      major: "Agricultural Economics",          photo: "/people/leo-klemm.png",     linkedin: "https://www.linkedin.com/in/leonard-klemm/" },
+  { name: "Jack Budinger", role: "Vice President", major: "Quantitative Business Economics", photo: "/people/jack-budinger.png", linkedin: "https://www.linkedin.com/in/jack-budinger-98366434a/" },
+  { name: "John Swift",    role: "CTO",            major: "Computer Science",                photo: "/people/john-swift.jpg",    linkedin: "https://www.linkedin.com/in/john-m-swift" },
+  { name: "Caleb Kuntz",   role: "Secretary",      major: "Biochemistry",                    photo: "/people/caleb-kuntz.png",   linkedin: "https://www.linkedin.com/in/caleb-kuntz-12a969349/" },
+  { name: "Jack Fetters",  role: "Treasurer",      major: "Biological Engineering",          photo: "/people/jack-fetters.png",  linkedin: "https://www.linkedin.com/in/jack-fetters-24a8aa35a/" },
 ];
 
 const members = [
-  { name: "Member Name", major: "Finance",      photo: "/people/member-name.jpg" },
-  { name: "Member Name", major: "Econ",         photo: undefined },
-  { name: "Member Name", major: "Ag Econ",      photo: undefined },
-  { name: "Member Name", major: "Data Science", photo: undefined },
-  { name: "Member Name", major: "CS",           photo: undefined },
-  { name: "Member Name", major: "Statistics",   photo: undefined },
-  { name: "Member Name", major: "Finance",      photo: undefined },
-  { name: "Member Name", major: "Econ",         photo: undefined },
+  { name: "Member Name", major: "Finance",      photo: "/people/member-name.jpg", linkedin: undefined },
+  { name: "Member Name", major: "Econ",         photo: undefined,                 linkedin: undefined },
+  { name: "Member Name", major: "Ag Econ",      photo: undefined,                 linkedin: undefined },
+  { name: "Member Name", major: "Data Science", photo: undefined,                 linkedin: undefined },
+  { name: "Member Name", major: "CS",           photo: undefined,                 linkedin: undefined },
+  { name: "Member Name", major: "Statistics",   photo: undefined,                 linkedin: undefined },
+  { name: "Member Name", major: "Finance",      photo: undefined,                 linkedin: undefined },
+  { name: "Member Name", major: "Econ",         photo: undefined,                 linkedin: undefined },
 ];
