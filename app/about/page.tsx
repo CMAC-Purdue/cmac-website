@@ -1,3 +1,43 @@
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+
+function Avatar({
+  name,
+  photo,
+  size = "md",
+}: {
+  name: string;
+  photo?: string;
+  size?: "md" | "lg";
+}) {
+  const [imgError, setImgError] = useState(false);
+  const dim = size === "lg" ? "w-20 h-20 text-2xl" : "w-12 h-12 text-lg";
+
+  if (photo && !imgError) {
+    return (
+      <div className={`${dim} rounded-full overflow-hidden flex-shrink-0`}>
+        <Image
+          src={photo}
+          alt={name}
+          width={size === "lg" ? 80 : 48}
+          height={size === "lg" ? 80 : 48}
+          className="object-cover w-full h-full"
+          onError={() => setImgError(true)}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`${dim} rounded-full bg-[#C8922A] flex items-center justify-center text-white font-bold flex-shrink-0`}
+    >
+      {name.charAt(0)}
+    </div>
+  );
+}
+
 export default function About() {
   return (
     <main>
@@ -40,12 +80,10 @@ export default function About() {
             {officers.map((o) => (
               <div
                 key={o.name}
-                className="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col gap-1"
+                className="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col items-center text-center gap-2"
               >
-                <div className="w-10 h-10 rounded-full bg-[#C8922A] flex items-center justify-center text-white font-bold text-lg mb-2">
-                  {o.name.charAt(0)}
-                </div>
-                <p className="font-semibold text-black">{o.name}</p>
+                <Avatar name={o.name} photo={o.photo} size="lg" />
+                <p className="font-semibold text-black mt-1">{o.name}</p>
                 <p className="text-[#C8922A] text-sm font-medium">{o.role}</p>
                 {o.major && (
                   <p className="text-gray-500 text-sm">{o.major}</p>
@@ -64,8 +102,9 @@ export default function About() {
             {members.map((m) => (
               <div
                 key={m.name}
-                className="rounded-xl p-4 border border-gray-200 flex flex-col gap-0.5"
+                className="rounded-xl p-4 border border-gray-200 flex flex-col items-center text-center gap-2"
               >
+                <Avatar name={m.name} photo={m.photo} size="md" />
                 <p className="font-medium text-black text-sm">{m.name}</p>
                 {m.major && (
                   <p className="text-gray-500 text-xs">{m.major}</p>
@@ -97,18 +136,18 @@ export default function About() {
 }
 
 const officers = [
-  { name: "Leo Klemm", role: "President", major: "Agricultural Economics" },
-  { name: "Jack Budinger", role: "Vice President", major: "Quantitative Business Economics" },
-  { name: "John Swift", role: "CTO", major: "Computer Science" },
+  { name: "Leo Klemm",     role: "President",      major: "Agricultural Economics",          photo: "/people/leo-klemm.png" },
+  { name: "Jack Budinger", role: "Vice President",  major: "Quantitative Business Economics", photo: "/people/jack-budinger.png" },
+  { name: "John Swift",    role: "CTO",             major: "Computer Science",                photo: "/people/john-swift.jpg" },
 ];
 
 const members = [
-  { name: "Member Name", major: "Finance" },
-  { name: "Member Name", major: "Econ" },
-  { name: "Member Name", major: "Ag Econ" },
-  { name: "Member Name", major: "Data Science" },
-  { name: "Member Name", major: "CS" },
-  { name: "Member Name", major: "Statistics" },
-  { name: "Member Name", major: "Finance" },
-  { name: "Member Name", major: "Econ" },
+  { name: "Member Name", major: "Finance",      photo: "/people/member-name.jpg" },
+  { name: "Member Name", major: "Econ",         photo: undefined },
+  { name: "Member Name", major: "Ag Econ",      photo: undefined },
+  { name: "Member Name", major: "Data Science", photo: undefined },
+  { name: "Member Name", major: "CS",           photo: undefined },
+  { name: "Member Name", major: "Statistics",   photo: undefined },
+  { name: "Member Name", major: "Finance",      photo: undefined },
+  { name: "Member Name", major: "Econ",         photo: undefined },
 ];
