@@ -1,0 +1,119 @@
+export default function About() {
+  return (
+    <main>
+      {/* Header */}
+      <section className="bg-[#F5F0E8] py-16 px-6 text-center">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-4xl font-bold mb-4">About CMAC</h1>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            We&apos;re a student-run organization at Purdue University dedicated to
+            developing the next generation of commodities and markets analysts.
+          </p>
+        </div>
+      </section>
+
+      {/* Story */}
+      <section className="py-16 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-6">Who We Are</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            CMAC was founded by a group of Purdue students who saw a gap between
+            classroom finance theory and the specialized world of commodities
+            markets. From corn and soybeans to crude oil and gold, commodities
+            drive the global economy — and we believe students deserve a place to
+            study them seriously.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Today CMAC brings together students from finance, economics,
+            agricultural economics, data science, and engineering to collaborate
+            on research, compete in trading challenges, and build lasting
+            industry connections.
+          </p>
+        </div>
+      </section>
+
+      {/* Officers */}
+      <section className="bg-gray-50 py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold mb-10 text-center">Current Officers</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {officers.map((o) => (
+              <div
+                key={o.name}
+                className="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col gap-1"
+              >
+                <div className="w-10 h-10 rounded-full bg-[#C8922A] flex items-center justify-center text-white font-bold text-lg mb-2">
+                  {o.name.charAt(0)}
+                </div>
+                <p className="font-semibold text-black">{o.name}</p>
+                <p className="text-[#C8922A] text-sm font-medium">{o.role}</p>
+                {o.major && (
+                  <p className="text-gray-500 text-sm">{o.major}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Members */}
+      <section className="py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold mb-10 text-center">General Members</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {members.map((m) => (
+              <div
+                key={m.name}
+                className="rounded-xl p-4 border border-gray-200 flex flex-col gap-0.5"
+              >
+                <p className="font-medium text-black text-sm">{m.name}</p>
+                {m.major && (
+                  <p className="text-gray-500 text-xs">{m.major}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Join */}
+      <section className="bg-[#F5F0E8] py-16 px-6 text-center">
+        <div className="max-w-xl mx-auto flex flex-col gap-4 items-center">
+          <h2 className="text-2xl font-bold">Want to Join?</h2>
+          <p className="text-gray-600">
+            CMAC welcomes all Purdue students. Reach out and we&apos;ll get you
+            connected with our next meeting.
+          </p>
+          <a
+            href="mailto:cmac@purdue.edu"
+            className="px-6 py-2.5 rounded-full bg-[#C8922A] text-white font-medium hover:bg-[#b07820] transition-colors"
+          >
+            Contact Us
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+// Replace with real officer data
+const officers = [
+  { name: "Name", role: "President", major: "Financial Planning, Analysis & Control" },
+  { name: "Name", role: "Vice President", major: "Economics" },
+  { name: "Name", role: "Treasurer", major: "Agricultural Economics" },
+  { name: "Name", role: "Secretary", major: "Finance" },
+  { name: "Name", role: "Research Director", major: "Data Science" },
+  { name: "Name", role: "Events Director", major: "Management" },
+];
+
+// Replace with real member data
+const members = [
+  { name: "Member Name", major: "Finance" },
+  { name: "Member Name", major: "Econ" },
+  { name: "Member Name", major: "Ag Econ" },
+  { name: "Member Name", major: "Data Science" },
+  { name: "Member Name", major: "CS" },
+  { name: "Member Name", major: "Statistics" },
+  { name: "Member Name", major: "Finance" },
+  { name: "Member Name", major: "Econ" },
+];

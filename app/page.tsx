@@ -1,65 +1,115 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main>
+      {/* Hero */}
+      <section className="bg-[#F5F0E8] py-24 px-6">
+        <div className="max-w-5xl mx-auto flex flex-col items-center text-center gap-6">
+          <Image
+            src="/cmaclogo.jpg"
+            alt="CMAC Logo"
+            width={140}
+            height={140}
+            className="rounded-xl"
+          />
+          <h1 className="text-5xl font-bold tracking-tight text-black">
+            CMAC at Purdue
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="text-xl text-gray-600 max-w-lg">
+            Commodities and Markets Analytics Club
           </p>
+          <div className="flex gap-4 mt-2">
+            <Link
+              href="/about"
+              className="px-6 py-2.5 rounded-full bg-[#C8922A] text-white font-medium hover:bg-[#b07820] transition-colors"
+            >
+              Meet the Team
+            </Link>
+            <Link
+              href="/projects"
+              className="px-6 py-2.5 rounded-full border border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-colors"
+            >
+              Our Projects
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </section>
+
+      {/* Mission */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Mission</h2>
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              CMAC exists to bridge the gap between academic theory and the
+              fast-moving world of commodities markets. We give Purdue students
+              the tools, knowledge, and community to analyze real-world markets
+              — from agriculture and energy to metals and financial derivatives.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Through hands-on projects, competitions, and industry connections,
+              we develop the next generation of market analysts, traders, and
+              researchers ready to make an impact from day one.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Pillars */}
+      <section className="bg-gray-50 py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">What We Do</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pillars.map((p) => (
+              <div
+                key={p.title}
+                className="bg-white rounded-2xl p-8 border border-gray-200 flex flex-col gap-3"
+              >
+                <span className="text-3xl">{p.icon}</span>
+                <h3 className="text-xl font-semibold">{p.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{p.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 px-6 text-center">
+        <div className="max-w-xl mx-auto flex flex-col gap-4 items-center">
+          <h2 className="text-3xl font-bold">Interested in Joining?</h2>
+          <p className="text-gray-600">
+            CMAC is open to all Purdue students regardless of major. Come learn,
+            compete, and connect.
+          </p>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:cmac@purdue.edu"
+            className="px-6 py-2.5 rounded-full bg-[#C8922A] text-white font-medium hover:bg-[#b07820] transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            Get in Touch
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
+
+const pillars = [
+  {
+    icon: "📊",
+    title: "Market Analysis",
+    body: "We dive deep into commodities markets — studying price drivers, supply and demand dynamics, and macroeconomic forces shaping global trade.",
+  },
+  {
+    icon: "🏆",
+    title: "Competitions",
+    body: "Members compete in trading simulations and case competitions, applying real analytical frameworks under pressure to sharpen practical skills.",
+  },
+  {
+    icon: "🤝",
+    title: "Industry Network",
+    body: "We host guest speakers, alumni panels, and networking events to connect students with professionals in trading, banking, and ag-business.",
+  },
+];
