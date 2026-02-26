@@ -44,15 +44,12 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Our Mission</h2>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              CMAC exists to bridge the gap between academic theory and the
-              fast-moving world of commodities markets. We give Purdue students
-              the tools, knowledge, and community to analyze real-world markets
-              — from agriculture and energy to metals and financial derivatives.
+             The Commodities & Markets Analytics Club at Purdue has two main Goals. We first aim to help members 
+             deepen their understanding of futures markets and strengthen 
+             their ability to evaluate and interpret them.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Through hands-on projects, competitions, and industry connections,
-              we develop the next generation of market analysts, traders, and
-              researchers ready to make an impact from day one.
+              Through weekly meetings and simulated trading competitions, we aim to provide students with hands-on experience and practice in the trading realm. We also aim to increase the members' knowledge of how programming impacts the commodities sector and allow them to practice by constructing programs and models of their own.
             </p>
           </div>
         </div>
