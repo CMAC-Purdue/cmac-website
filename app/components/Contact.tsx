@@ -3,7 +3,7 @@
 export default function Contact() {
 
     return (
-      <section className="py-20 px-6 text-center">
+      <section className="py-10 px-6 text-center">
         <div className="max-w-xl mx-auto flex flex-col gap-4 items-center">
           <h2 className="text-3xl font-bold">Interested in Joining?</h2>
           <p className="text-gray-600">
