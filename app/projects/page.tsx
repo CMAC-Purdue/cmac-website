@@ -51,10 +51,10 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Research Projects */}
+      {/* Projects */}
       <section className="bg-gray-50 py-16 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8">Research Projects</h2>
+          <h2 className="text-2xl font-bold mb-8">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {researchProjects.map((p) => (
               <div
@@ -82,55 +82,35 @@ export default function Projects() {
   );
 }
 
-// Replace with real competition data
 const competitions = [
   {
-    title: "Competition Name",
-    status: "Active",
-    year: "2025–26",
-    description: "Placeholder lol",
-    result: null,
-  },
-  {
-    title: "Competition Name",
-    status: "Completed",
-    year: "2024–25",
-    description: "placeholder",
-    result: "Result / placement if applicable.",
-  },
-  {
-    title: "Competition Name",
+    title: "CME Trading Competition",
     status: "Upcoming",
-    year: "Spring 2026",
-    description: "description",
+    year: "TBD",
+    description: "The CME's annual trading competition. Hundreds of teams participate in paper trading for the chance to win cash prizes.",
     result: null,
+  },
+  {
+    title: "Internal Simulation",
+    status: "Upcoming",
+    year: "Continuous",
+    description: "The CMAC will be holding a paper trading competition among club members. Members are encouraged to attempt algorithmic trading and market analysis to create a strong portfolio.",
+    result: "More details will be provided as the competition approaches, including an SDK for data analysis and trading within the simulation.",
+  },
+  {
+    title: "Data and Development",
+    status: "Upcoming",
+    year: "Continuous",
+    description: "Members of the CMAC will create different data science and software projects related to market analysis and trading. Projects will be evaluated on criteria such as efficiency, utility, and overall idea.",
+    result: "More details will be provided as the competition approaches, such as acceptable projects and explicit judging criteria.",
   },
 ];
 
-// Replace with real project data
 const researchProjects = [
   {
-    title: "Project Title",
+    title: "Club Infrastructure",
     status: "Active",
-    description: "Short description of the research project — what markets are being analyzed, what methods are being used, and what the goal is.",
-    lead: "Member Name",
-  },
-  {
-    title: "Project Title",
-    status: "Active",
-    description: "Short description of another research project. Replace with real details about the analysis or topic.",
-    lead: "Member Name",
-  },
-  {
-    title: "Project Title",
-    status: "Completed",
-    description: "A completed research project. Describe the findings or outcome here.",
-    lead: "Member Name",
-  },
-  {
-    title: "Project Title",
-    status: "Upcoming",
-    description: "A planned project for the coming semester. Describe the intended scope and goals.",
-    lead: "TBD",
-  },
+    description: "Building and maintaining new club software. Examples include the club website, trading simulation platforms, and development challenges.",
+    lead: "John Swift",
+  }, 
 ];
