@@ -147,12 +147,5 @@ const officers = [
 ];
 
 const members = [
-  { name: "Member Name", major: "Finance",      photo: "/people/member-name.jpg", linkedin: undefined },
-  { name: "Member Name", major: "Econ",         photo: undefined,                 linkedin: undefined },
-  { name: "Member Name", major: "Ag Econ",      photo: undefined,                 linkedin: undefined },
-  { name: "Member Name", major: "Data Science", photo: undefined,                 linkedin: undefined },
-  { name: "Member Name", major: "CS",           photo: undefined,                 linkedin: undefined },
-  { name: "Member Name", major: "Statistics",   photo: undefined,                 linkedin: undefined },
-  { name: "Member Name", major: "Finance",      photo: undefined,                 linkedin: undefined },
-  { name: "Member Name", major: "Econ",         photo: undefined,                 linkedin: undefined },
+  { name: "Ryan Kneller", major: "Finance",      photo: "", linkedin: "https://www.linkedin.com/in/ryan-kneller-5a12a9383/" }, 
 ];
